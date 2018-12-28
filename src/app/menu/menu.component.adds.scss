@@ -1,0 +1,128 @@
+.menu-component {
+  animation: slide-right-menu 1s forwards;
+
+    .menu-text {
+      @for $var from 0 to 3 {
+        :nth-child($var) {
+          animation: slide-right-opt forwards cubic-bezier(0.15, 0.95, 0.45, 1.15);
+          animation-duration: $var;
+        }
+      }
+    }
+
+    @keyframes slide-right-menu {
+        from {
+          width: 3.5%;
+        }
+
+        to {
+          width: 15%;
+        }
+    }
+
+  @keyframes slide-right-opt {
+    from {
+      margin: 5% 0 5% -200%;
+    }
+
+    to {
+      margin: 5% 0 5% 0%;
+    }
+  }
+
+  .menu-option {
+    animation: change-color 1.5s forwards ease-out;
+  }
+
+  @keyframes change-color {
+    from {
+      background-color: rgba(216, 216, 216, 0);
+    }
+
+    to {
+      background-color: rgba(143, 255, 216, 0.5);
+    }
+  }
+
+  &.hidden {
+    transition: width 1s;
+    -webkit-transition: width 1s;
+
+    animation: slide-left-menu 1s forwards;
+
+    @keyframes slide-left-menu {
+      from {
+        width: 15%;
+      }
+
+      to {
+        width: 3.5%;
+      }
+    }
+
+    .menu-option {
+      animation: change-color-hidden 1.5s forwards ease-out;
+    }
+
+    @keyframes change-color-hidden {
+      from {
+        background-color: rgba(143, 255, 216, 0.5);
+      }
+
+      to {
+        background-color: rgba(216, 216, 216, 0);
+      }
+    }
+
+    .menu-text {
+      animation: slide-left-opt 1.5s forwards;
+    }
+
+    @keyframes slide-left-opt {
+      from {
+        margin: 5% 0 5% 0%;
+      }
+
+      to {
+        margin: 5% 0 5% -200%;
+      }
+    }
+
+    #menu-img {
+      -webkit-transform: rotate(180deg);
+      -moz-transform:rotate(180deg);
+      transform: rotate(180deg);
+    }
+
+  }
+
+  #menu-head {
+    width: 92.5%
+  }
+
+  .menu-option {
+    width: 100%;
+    position: absolute;
+    background-color: rgba(143, 255, 216, 0.5);
+    height: 95%;
+  }
+
+  .menu-section {
+    width: 100%;
+    display: flex;
+
+    :hover {
+      cursor: pointer;
+    }
+
+    #menu-img {
+      margin: 1%;
+      float: right;
+      border-radius: 20px;
+      border: 0.2pt solid;
+      width: 23px;
+      height: 18px;
+    }
+
+  }
+}
