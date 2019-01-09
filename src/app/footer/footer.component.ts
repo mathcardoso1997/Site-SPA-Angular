@@ -15,9 +15,7 @@ export class FooterComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
-    if (window.screenY > 0) {
-      this.elem.nativeElement.firstChild.style.bottom = '0';
-    }
+
   }
 
   scrollTop() {

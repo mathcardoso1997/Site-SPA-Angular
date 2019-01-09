@@ -1,9 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <header-component (headerHeight)="getHeaderHeight($event)"></header-component>
-<div id="app-body">
-  <menu-component [currentTop]="headerHeight"></menu-component>
-  <section-component></section-component>
-</div>
+<menu-component [currentTop]="headerHeight"></menu-component>
+<section-component></section-component>
 <footer-component></footer-component>
 
 
